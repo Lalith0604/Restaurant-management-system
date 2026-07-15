@@ -35,7 +35,24 @@ class restaurant:
 
     #place order
     def place_order(self):
-        pass
+       order_no=int(input("Enter the order no."))
+       orders=order(order_no)
+       dish_id=int(input("Enter the dish no."))
+       target_dish=None
+       for dish in self.menu:
+            if dish.item_no==dish_id:
+                target_dish=dish
+                break
+
+       if not(target_dish):
+            print("Sorry you cannot place order")
+            return
+
+       orders.dishs.append(target_dish)
+       orders.total.append(target_dish.price)
+       self.orders.append(orders)
+       print("thank you for your order")
+
 
     #genarate bill
 
