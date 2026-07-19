@@ -55,6 +55,28 @@ class restaurant:
 
 
     #genarate bill
+    def genarate_bill(self):
+        order_no=int(input("Enter the order no."))
+        target=None
+        for customer in self.menu:
+            if customer.item_no==order_no:
+                target=customer
+                break
+
+        if not target:
+            print("no order number found")
+            return
+
+        total=0
+        for dish in target.total:
+            total+=dish.price
+
+        print("dish \t price")
+        for dish in target:
+            print(dish.item_no,"\t",dish.price)
+
+        print(f"total amount : {total}")
+        print("Thank's for ordering food")
 
 
 
