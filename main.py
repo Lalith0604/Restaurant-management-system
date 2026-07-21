@@ -19,6 +19,10 @@ class restaurant:
         self.menu=[]
         self.orders=[]
 
+    #checking is dish exists
+    def add_dish(self,item_no,item_name):
+        pass
+
     #add memu
     def add_dish(self):
         item_no=int(input("Enter the item no."))
